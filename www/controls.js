@@ -35,7 +35,8 @@ function checklatency(delay) {
 
 function showlatency(){
 	latency = Date.now() - startTime;
-	document.getElementById("div-latencymeter").innerHTML="latency:"+latency+"ms";
+	let m = (latency.toString()).padStart(5, '_');
+	document.getElementById("div-latencymeter").innerHTML="latency:"+m+("ms &nbsp;&nbsp; RXbuf:")+AudioRX_audiobuffer.length;
 }
 
 function sendTRXptt(stat){
